@@ -1,0 +1,39 @@
+/* src/Connect4.css */
+.connect4-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .connect4-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  
+  .cell {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cell.red {
+    background-color: red;
+  }
+  
+  .cell.yellow {
+    background-color: yellow;
+  }
+  
+  .status {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+  }
+  
