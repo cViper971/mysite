@@ -1,14 +1,33 @@
-/* Fonts and Global Reset */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
-
+/* Dark Theme with Cold Colors */
 body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+  background: linear-gradient(45deg, #1a1a2e, #162447, #1f4068, #0a192f);
+  background-size: 300% 300%; /* Creates smooth animation transitions */
+  animation: gradientAnimation 6s ease infinite; /* 10s animation loop */
   font-family: "Inter", sans-serif;
-  background-color: #121212; /* Dark Background */
-  color: #e0e0e0; /* Light Text */
-  scroll-behavior: smooth; /* Smooth scrolling */
+  color: #e1e1e6; /* Light, cold text */
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+main {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  overflow-y: scroll;
 }
 
 /* App container */
@@ -26,15 +45,18 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background-color: #1f1f1f; /* Slightly lighter dark for contrast */
-  color: #e0e0e0;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 40px 30px;
+  background-color: #1a1a22; /* Dark purple-blue background */
+  color: #e1e1e6;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  height: 70px; /* Specify height */
 }
 
 .navbar-brand {
   font-size: 24px;
   font-weight: 600;
+  color: #76c7c0; /* Teal accent for brand */
 }
 
 .navbar-links {
@@ -47,7 +69,7 @@ body, html {
 
 .navbar-links a {
   text-decoration: none;
-  color: #e0e0e0;
+  color: #e1e1e6;
   font-size: 16px;
   transition: color 0.3s;
 }
@@ -56,26 +78,27 @@ body, html {
   color: #76c7c0; /* Teal accent color */
 }
 
-/* Section Styling */
 .section {
   min-height: 100vh;
-  padding: 100px 50px;
+  padding: 0px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+/* Specific Section Colors */
 .about {
-  background-color: #121212;
+  background-color: transparent; /* Semi-transparent */
 }
 
 .projects {
-  background-color: #1e1e1e;
+  background-color: rgb(17, 23, 40); /* Semi-transparent */
 }
 
 .connect4 {
-  background-color: #121212;
+  background-color: transparent; /* Semi-transparent */
 }
+
 
 /* About Section */
 .content {
@@ -98,7 +121,7 @@ body, html {
 .profile-description {
   font-size: 18px;
   line-height: 1.6;
-  color: #e0e0e0;
+  color: #e1e1e6; /* Light, cold text */
   margin-bottom: 30px;
 }
 
@@ -106,7 +129,7 @@ body, html {
   display: inline-block;
   margin-right: 15px;
   font-size: 16px;
-  color: #76c7c0;
+  color: #76c7c0; /* Cold accent color */
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: color 0.3s, border-bottom 0.3s;
@@ -128,7 +151,7 @@ body, html {
 /* Projects Section */
 .projects h2 {
   font-size: 36px;
-  color: #76c7c0;
+  color: #76c7c0; /* Teal accent for titles */
   margin-bottom: 20px;
 }
 
@@ -149,12 +172,12 @@ body, html {
 /* Connect 4 Section */
 .connect4 h2 {
   font-size: 36px;
-  color: #76c7c0;
+  color: #76c7c0; /* Teal accent */
   margin-bottom: 20px;
 }
 
 .game-placeholder {
-  background-color: #1e1e1e;
+  background-color: #162447;
   height: 300px;
   display: flex;
   align-items: center;
@@ -164,6 +187,6 @@ body, html {
 }
 
 .game-placeholder p {
-  color: #e0e0e0;
+  color: #e1e1e6; /* Light text color */
   font-size: 18px;
 }

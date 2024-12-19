@@ -16,10 +16,10 @@ function App() {
               and creating innovative solutions for the future.
             </p>
             <div className="social-links">
-              <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/vivek-chandy/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href="mailto:your.email@example.com">Email</a>
+              <a href="mailto:vac23@duke.edu">Email</a>
             </div>
           </div>
           <img 
