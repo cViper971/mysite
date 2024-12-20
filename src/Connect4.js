@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
+import { AImove, checkWinner, getColIndex } from './Connect4ai';
 import './Connect4.css';
 
 const Connect4 = () => {
-  const [board, setBoard] = useState(Array(6).fill().map(() => Array(7).fill(null)));
-  const [currentPlayer, setCurrentPlayer] = useState('Red');
+  const [board, setBoard] = useState(Array(6).fill().map(() => Array(7).fill(0)));
+  const [gameOver, setGameOver] = useState(false)
 
   const handleClick = (colIndex) => {
-    const newBoard = board.map(row => [...row]); // Copy each row to avoid references
-    for (let row = 5; row >= 0; row--) {
-      if (!newBoard[row][colIndex]) {
-        newBoard[row][colIndex] = currentPlayer;
-        break;
-      }
-    }
-    setBoard(newBoard);
-    setCurrentPlayer(currentPlayer === 'Red' ? 'Yellow' : 'Red');
+    playMove(colIndex,true);
   };
+
+  function playMove(c, p1turn){
+    if(gameOver) return;
+    const newBoard = board.map(row => [...row]);
+
+    let r = getColIndex(c,board);
+    console.log(r);
+    newBoard[r][c] = p1turn ? 1 : -1;
+
+    if(checkWinner(newBoard)!=0) setGameOver(true);
+    setBoard(newBoard);
+
+    if(p1turn)
+      playMove(AImove(newBoard),false);
+  }
 
   const renderCell = (row, col) => {
     return (
       <div
-        className={`cell ${board[row][col] ? board[row][col].toLowerCase() : ''}`}
+        className={`cell ${board[row][col]!=0 ? (board[row][col] == 1 ? "red" : "yellow") : ''}`}
         onClick={() => handleClick(col)}
       />
     );
@@ -33,9 +41,6 @@ const Connect4 = () => {
           {row.map((_, colIndex) => renderCell(rowIndex, colIndex))}
         </div>
       ))}
-      <div className="status">
-        <p>Current Player: {currentPlayer}</p>
-      </div>
     </div>
   );
 };
