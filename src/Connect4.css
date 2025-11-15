@@ -1,39 +1,112 @@
-/* src/Connect4.css */
+/* Connect4 Game Container */
+.connect4-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Game Status Display */
+.game-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.status-message {
+  font-size: 24px;
+  font-weight: 600;
+  color: #76c7c0;
+  text-align: center;
+  min-width: 200px;
+}
+
+/* Reset Button */
+.reset-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+  background-color: #76c7c0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(118, 199, 192, 0.3);
+}
+
+.reset-button:hover {
+  background-color: #5fb5ad;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(118, 199, 192, 0.5);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+/* Game Board */
 .connect4-board {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .connect4-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
-  }
-  
+  display: inline-flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #1f4068;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.connect4-row {
+  display: flex;
+  justify-content: center;
+}
+
+/* Game Cells */
+.cell {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 6px;
+  background-color: #0a192f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 3px solid #162447;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cell:hover {
+  border-color: #76c7c0;
+  transform: scale(1.05);
+}
+
+.cell.red {
+  background-color: #e63946;
+  box-shadow: 0 4px 8px rgba(230, 57, 70, 0.4);
+  border-color: #e63946;
+}
+
+.cell.yellow {
+  background-color: #ffd166;
+  box-shadow: 0 4px 8px rgba(255, 209, 102, 0.4);
+  border-color: #ffd166;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .cell {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 5px;
-    background-color: #ddd;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    width: 45px;
+    height: 45px;
+    margin: 4px;
   }
-  
-  .cell.red {
-    background-color: red;
+
+  .status-message {
+    font-size: 20px;
   }
-  
-  .cell.yellow {
-    background-color: yellow;
+
+  .connect4-board {
+    padding: 15px;
   }
-  
-  .status {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #fff;
-  }
+}
   

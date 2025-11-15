@@ -1,18 +1,24 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Connect4 from "./Connect4"; // Import the Connect4 component
+import Connect4 from "./Connect4";
 import "./App.css";
 
+/**
+ * Main App component - Portfolio website for Vivek Chandy
+ * Features sections for About, Projects, and an interactive Connect4 game
+ */
 function App() {
   return (
     <div className="app">
       <Navbar />
+
+      {/* About Section */}
       <div id="about" className="section about">
         <div className="content">
           <div className="text-container">
             <h1 className="profile-name">Vivek Chandy</h1>
             <p className="profile-description">
-              I'm a passionate developer interested in artificial intelligence, augmented reality, 
+              I'm a passionate developer interested in artificial intelligence, augmented reality,
               and creating innovative solutions for the future.
             </p>
             <div className="social-links">
@@ -22,14 +28,15 @@ function App() {
               <a href="mailto:vac23@duke.edu">Email</a>
             </div>
           </div>
-          <img 
-            src="https://via.placeholder.com/300" 
-            alt="Vivek Chandy" 
+          <img
+            src="https://via.placeholder.com/300"
+            alt="Vivek Chandy"
             className="profile-photo"
           />
         </div>
       </div>
 
+      {/* Projects Section */}
       <div id="projects" className="section projects">
         <h2>Projects</h2>
         <p className="projects-description">
@@ -48,6 +55,7 @@ function App() {
         </ul>
       </div>
 
+      {/* Connect4 Game Section */}
       <div id="connect4" className="section connect4">
         <h2>Connect 4</h2>
         <Connect4 />
